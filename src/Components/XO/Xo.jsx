@@ -15,6 +15,7 @@ const Xo = () => {
     let [x, setX] = useState(0)
     let [o, seto] = useState(0)
     let [xo, setxo] = useState("x")
+    const audioRef = useRef(null);
 
     let box1 = useRef(null);
     let box2 = useRef(null);
@@ -102,9 +103,6 @@ const Xo = () => {
         }, 2000);
     }
 
-
-
-
     let time = () => {
         setTimeout(() => {
             reset();
@@ -120,16 +118,11 @@ const Xo = () => {
         });
     } 
 
-
-
-const audioRef = useRef(null);
-
 const playWinSound = () => {
     if (audioRef.current) {
         audioRef.current.play();
     }
 };
-
 
     return (
         <div className="container">
